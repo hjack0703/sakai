@@ -3,7 +3,7 @@
   "private": true,
   "description": "株式会社サカイ様 ご提案資料（PowerPoint）の生成スクリプト",
   "scripts": {
-    "build": "node deck3.js ../docs/20261027_サカイ様向けご提案_GREEX.pptx && node internal.js \"../docs/【社内用】20261027_サカイ様_案件メモ.pptx\""
+    "build": "node deck4.js ../docs/20261027_サカイ様向けご提案_GREEX.pptx && node internal.js \"../docs/【社内用】20261027_サカイ様_案件メモ.pptx\""
   },
   "dependencies": {
     "@iconify-json/fluent-emoji-flat": "*",
