@@ -1,0 +1,17 @@
+{
+  "name": "sakai-proposal-deck",
+  "private": true,
+  "description": "株式会社サカイ様 ご提案資料（PowerPoint）の生成スクリプト",
+  "scripts": {
+    "build": "node deck.js ../docs/20261027_サカイ様向けご提案_GREEX.pptx"
+  },
+  "dependencies": {
+    "@iconify-json/fluent-emoji-flat": "*",
+    "@iconify/utils": "*",
+    "pptxgenjs": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-icons": "*",
+    "sharp": "*"
+  }
+}
