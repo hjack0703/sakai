@@ -48,8 +48,8 @@ const OUT = process.argv[2] || "proposal.pptx";
     s.addImage({ data: await illus("sparkles"), x: 11.5, y: 1.35, w: 1.1, h: 1.1, altText: "きらめきのイラスト" });
     s.addImage({ data: await illus("locked-with-key"), x: 11.0, y: 4.75, w: 1.35, h: 1.35, altText: "鍵のイラスト" });
     s.addText("株式会社サカイ 御中", { placeholder: "client" });
-    s.addText("“事務の時間”を、\nケアと未来の時間へ", { placeholder: "title" });
-    s.addText("Google Workspace × Gemini 活用による\n業務効率化・Drive移行 ご支援のご提案", { placeholder: "subtitle" });
+    s.addText("「事務の時間」を、\nケアと未来の時間へ", { placeholder: "title" });
+    s.addText("Google Workspace × Gemini 活用による\n業務効率化・Drive 移行 ご支援のご提案", { placeholder: "subtitle" });
     s.addText("2026年10月27日\nグリーエックス株式会社　山口 宙輝", { placeholder: "meta" });
   }
 
@@ -59,12 +59,12 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content("はじめに", {
       kicker: "はじめに",
       title: "本提案のポイント",
-      lead: "導入済みの Workspace／Gemini を使い切り、追加投資なしで安全なデータ管理と業務効率化を両立します",
+      lead: "導入済みの Workspace／Gemini を活かし切り、安全なデータ管理と業務効率化を両立します",
     });
     const pts = [
-      ["Drive移行と“仕組みで守る”共有ルールを最優先で整備", "Dropboxからの切替を早期に完了。リンク共有の不安は、管理者設定と共有ドライブの権限設計で解消し、個人情報を安心して扱える状態を先につくります。"],
-      ["テスト導入8名の業務から、効果の出る“型”をつくる", "資料作成・メール・議事録・提出物管理など、効果を実感しやすい業務から活用テンプレートと手順書を整備。担当者様が社内で教えられる状態をめざします。"],
-      ["50〜70名へ段階展開し、効果を数字で示す", "部門ごとに無理なく展開し、削減時間・利用率などの指標で費用対効果を可視化。代表取締役へのご報告・月次会議にそのまま使える形で整理します。"],
+      ["Drive 移行と「仕組みで守る」共有ルールを最優先で整備", "Dropbox からの切替を早期に完了。リンク共有の不安は、管理者設定と共有ドライブの権限設計で減らし、個人情報を安心して扱える状態を先につくります。"],
+      ["テスト導入8名の業務から、効果の出る「型」をつくる", "資料作成・メール・議事録・提出物管理など、効果を実感しやすい業務から活用テンプレートと手順書を整備。ご担当者様が社内で教えられる状態を目指します。"],
+      ["対象部門の50〜70名へ段階展開し、効果を数字で示す", "部門ごとに無理なく展開し、削減時間・利用率などの指標で費用対効果を可視化。代表取締役へのご報告・月次会議にそのまま使える形で整理します。※ ご契約エディションによっては、一部機能に上位エディションが必要です"],
     ];
     pts.forEach(([h, b], i) => {
       const y = 2.1 + i * 1.5;
@@ -91,7 +91,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content("はじめに", { kicker: "はじめに", title: "本日のアジェンダ", lead: "現状のご理解から、ご提案内容、他社事例、進め方・費用までを順にご説明します" });
     const items = [
       ["01", "現状のご理解", "業界環境と貴社の現状・課題の整理"],
-      ["02", "ご提案内容", "Drive移行／業務別AI活用／定着・社内展開"],
+      ["02", "ご提案内容", "Drive 移行／業務別AI 活用／定着・社内展開"],
       ["03", "他社事例", "介護・福祉や他業種での Google Workspace／Gemini 活用"],
       ["04", "進め方・体制・費用", "スケジュール、ご支援プラン、費用対効果"],
       ["05", "本日ご相談したいこと", "確認事項と今後の進め方"],
@@ -115,9 +115,9 @@ const OUT = process.argv[2] || "proposal.pptx";
       title: "ご相談内容の確認",
       lead: "ご相談内容を次のように理解しています（認識に相違があれば、本日ご指摘ください）",
     });
-    const th = { bold: true, color: HEX.dk2, fill: { color: "F3F2FA" }, fontSize: 12, valign: "middle" };
-    const td = { color: HEX.dk1, fill: { color: "FFFFFF" }, fontSize: 12, valign: "middle" };
-    s.addTable(D.rfp.map(([k, v]) => [{ text: k, options: th }, { text: v, options: td }]), { x: MX, y: 2.0, w: CW, colW: [2.2, CW - 2.2], rowH: D.rfp.map((r) => (r[1].length > 110 ? 0.72 : 0.5)), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 10, 3, 10], fontFace: L.THEME.bodyFontFace });
+    const th = { bold: true, color: HEX.dk2, fill: { color: "F3F2FA" }, fontSize: 11, valign: "middle" };
+    const td = { color: HEX.dk1, fill: { color: "FFFFFF" }, fontSize: 11, valign: "middle" };
+    s.addTable(D.rfp.map(([k, v]) => [{ text: k, options: th }, { text: v, options: td }]), { x: MX, y: 2.0, w: CW, colW: [1.9, CW - 1.9], rowH: D.rfp.map((r) => (r[1].length > 110 ? 0.6 : 0.4)), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 10, 3, 10], fontFace: L.THEME.bodyFontFace });
   }
 
   // 業界環境
@@ -125,7 +125,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content(sec, {
       kicker: "01｜現状のご理解",
       title: "介護業界では「間接業務の削減」が経営テーマに",
-      lead: "担い手不足が続くなか、記録・書類・会議など“ケア以外の時間”の削減が採用・定着と並ぶ競争力に",
+      lead: "担い手不足が続くなか、記録・書類・会議など「ケア以外の時間」の削減が採用・定着と並ぶ競争力に",
     });
     const cw = (CW - 0.6) / 3;
     D.industry.stats.forEach((st, i) => {
@@ -147,17 +147,17 @@ const OUT = process.argv[2] || "proposal.pptx";
   {
     const s = content(sec, {
       kicker: "01｜現状のご理解",
-      title: "制度面でも、生産性向上の取組みが評価されています",
+      title: "制度面でも、生産性向上の取り組みが評価されています",
       lead: D.policy.lead,
     });
     const lw = 4.7;
     D.policy.timeline.forEach((t, i) => {
-      const y = 2.15 + i * 2.0;
-      card(s, pres, { x: MX, y, w: lw, h: 1.7 });
+      const y = 2.15 + i * 2.2;
+      card(s, pres, { x: MX, y, w: lw, h: 1.95 });
       chip(s, t.when, { x: MX + 0.25, y: y + 0.22, w: 1.7, color: i ? C.accent1 : C.accent2, fontSize: 10 });
       text(s, t.t, { x: MX + 0.25, y: y + 0.6, w: lw - 0.5, h: 0.38, fontSize: 15, bold: true, color: C.text2 });
-      text(s, t.d, { x: MX + 0.25, y: y + 0.98, w: lw - 0.5, h: 0.65, fontSize: 12, color: C.text1 });
-      if (i === 0) s.addShape(pres.ShapeType.downArrow, { x: MX + lw / 2 - 0.16, y: y + 1.74, w: 0.32, h: 0.24, fill: { color: C.accent6 }, line: { type: "none" } });
+      text(s, t.d, { x: MX + 0.25, y: y + 1.0, w: lw - 0.5, h: 0.88, fontSize: 13, color: C.text1 });
+      if (i === 0) s.addShape(pres.ShapeType.downArrow, { x: MX + lw / 2 - 0.16, y: y + 1.98, w: 0.32, h: 0.2, fill: { color: C.accent6 }, line: { type: "none" } });
     });
     const rx = MX + lw + 0.4, rw = CW - lw - 0.4, c1 = 3.35;
     text(s, "生産性向上推進体制加算（Ⅱ）の主な要件", { x: rx, y: 2.15, w: c1, h: 0.3, fontSize: 12, bold: true, color: C.accent6 });
@@ -170,7 +170,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       s.addShape(pres.ShapeType.roundRect, { x: rx + c1 + 0.45, y, w: rw - c1 - 0.45, h: 0.9, rectRadius: 0.08, fill: tint(C.accent3, 88), line: { type: "none" } });
       text(s, how, { x: rx + c1 + 0.6, y, w: rw - c1 - 0.75, h: 0.9, fontSize: 12, bold: true, color: C.text2, valign: "middle" });
     });
-    text(s, D.policy.note, { x: rx, y: 5.75, w: rw, h: 0.65, fontSize: 11, color: C.accent6 });
+    text(s, D.policy.note, { x: rx, y: 5.75, w: rw, h: 0.8, fontSize: 11, color: C.text1 });
     source(s, pres, D.policy.source);
     notes(s, D.policy.notes);
   }
@@ -193,7 +193,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     text(s, D.company.others, { x: MX + 0.3, y: 3.68, w: lw - 0.6, h: 0.5, fontSize: 11, color: C.text1 });
     text(s, "エリア：" + D.company.area, { x: MX + 0.3, y: 4.2, w: lw - 0.6, h: 0.5, fontSize: 11, color: C.text1 });
     s.addShape(pres.ShapeType.line, { x: MX + 0.3, y: 4.8, w: lw - 0.6, h: 0, line: { color: "D5D2EE", width: 0.75 } });
-    text(s, D.company.signals.map((t, i) => ({ text: t, options: { bullet: { indent: 12 }, breakLine: i < D.company.signals.length - 1, paraSpaceAfter: 3 } })), { x: MX + 0.3, y: 4.92, w: lw - 0.6, h: 1.5, fontSize: 11, color: C.text1 });
+    text(s, D.company.signals.map((t, i) => ({ text: t, options: { bullet: { indent: 12 }, breakLine: i < D.company.signals.length - 1, paraSpaceAfter: 8 } })), { x: MX + 0.3, y: 4.92, w: lw - 0.6, h: 1.5, fontSize: 12, color: C.text1 });
     const rx = MX + lw + 0.35, rw = CW - lw - 0.35, gw = (rw - 0.3) / 2, gh = 2.1;
     const icons = [fa.FaSitemap, fa.FaClipboardList, fa.FaComments, fa.FaSeedling];
     for (let i = 0; i < D.company.points.length; i++) {
@@ -202,7 +202,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       card(s, pres, { x, y, w: gw, h: gh });
       await iconCircle(s, pres, { Icon: icons[i], x: x + 0.25, y: y + 0.25, d: 0.55, color: [C.accent1, C.accent2, C.accent3, C.accent4][i] });
       text(s, pt.t, { x: x + 0.95, y: y + 0.25, w: gw - 1.1, h: 0.55, fontSize: 15, bold: true, color: C.text2, valign: "middle" });
-      text(s, pt.d, { x: x + 0.25, y: y + 0.98, w: gw - 0.5, h: 1.0, fontSize: 13, color: C.text1 });
+      text(s, pt.d, { x: x + 0.25, y: y + 0.95, w: gw - 0.4, h: 1.05, fontSize: 12, color: C.text1 });
     }
     source(s, pres, D.company.source);
     notes(s, D.company.notes);
@@ -212,21 +212,21 @@ const OUT = process.argv[2] || "proposal.pptx";
   {
     const s = content(sec, {
       kicker: "01｜現状のご理解",
-      title: "貴社の現状：基盤は整い、“使いこなし”の段階へ",
+      title: "貴社の現状：基盤は整い、「使いこなし」の段階へ",
       lead: "Workspace はすぐ使える一方、Dropbox・無料 Gmail・Office が併存し、データとルールが分散しています",
     });
     const tools = [
-      { Icon: fa.FaGoogle, name: "Google Workspace", tag: "導入済", tagC: C.accent3, desc: "Driveでのファイル共有、カレンダーでの実績記録、スプレッドシートでの提出物管理・郵便物処理記録" },
+      { Icon: fa.FaGoogle, name: "Google Workspace", tag: "導入済", tagC: C.accent3, desc: "Drive でファイル共有、カレンダーで一部スケジュール管理（同じ業務の担当者同士で実績記録）、スプレッドシートで提出物管理・郵便物処理記録" },
       { Icon: fa.FaWandMagicSparkles, name: "Gemini", tag: "テスト導入中", tagC: C.accent2, desc: "担当部署8名で試行。資料作成で大幅な時間削減を実感" },
       { Icon: fa.FaDropbox, name: "Dropbox", tag: "移行対象", tagC: C.accent5, desc: "現行のデータ保管先。Google Driveへの早期切替を希望" },
       { Icon: fa.FaFileExcel, name: "Office 2024", tag: "併用", tagC: C.accent6, desc: "Microsoft Office 2024（買い切り版）。Excel／Word資料との併用ルールが必要" },
-      { Icon: fa.FaEnvelope, name: "Gmail（無料版）", tag: "要整理", tagC: C.accent5, desc: "一部業務で利用中。組織の管理外で、無料版の AI は入力内容が学習等に使われ得るため集約を推奨" },
+      { Icon: fa.FaEnvelope, name: "Gmail（無料版）", tag: "要整理", tagC: C.accent5, desc: "一部業務で利用中。組織の管理外で、無料版の AI は入力内容が学習等に使われ得るため、Workspace への集約を推奨。なお、現行システムのサーバーはクラウド" },
     ];
     const gw = 4.0, gh = 1.38, gx = MX, gy = 2.15;
     tools.forEach((t, i) => {
       const col = i % 2, row = Math.floor(i / 2);
       const x = gx + col * (gw + 0.25), y = gy + row * (gh + 0.2);
-      card(s, pres, { x, y, w: gw, h: gh });
+      card(s, pres, { x, y, w: i === 4 ? gw * 2 + 0.25 : gw, h: gh });
       return t;
     });
     for (let i = 0; i < tools.length; i++) {
@@ -234,22 +234,23 @@ const OUT = process.argv[2] || "proposal.pptx";
       const col = i % 2, row = Math.floor(i / 2);
       const x = gx + col * (gw + 0.25), y = gy + row * (gh + 0.2);
       await iconCircle(s, pres, { Icon: t.Icon, x: x + 0.22, y: y + 0.22, d: 0.55, color: C.text2 });
-      text(s, t.name, { x: x + 0.92, y: y + 0.2, w: gw - 2.1, h: 0.32, fontSize: 14, bold: true, color: C.text2 });
-      chip(s, t.tag, { x: x + gw - 1.25, y: y + 0.22, w: 1.05, color: t.tagC });
-      text(s, t.desc, { x: x + 0.92, y: y + 0.58, w: gw - 1.12, h: 0.75, fontSize: 12, color: C.text1 });
+      const cw2 = i === 4 ? gw * 2 + 0.25 : gw;
+      text(s, t.name, { x: x + 0.92, y: y + 0.2, w: cw2 - 2.1, h: 0.32, fontSize: 14, bold: true, color: C.text2 });
+      chip(s, t.tag, { x: x + cw2 - 1.08, y: y + 0.22, w: 0.92, color: t.tagC });
+      text(s, t.desc, { x: x + 0.92, y: y + 0.58, w: cw2 - 1.1, h: 0.75, fontSize: 12, color: C.text1 });
     }
     // right callout
     const px = 9.2, pw = W - MX - px;
     s.addShape(pres.ShapeType.roundRect, { x: px, y: 2.15, w: pw, h: 4.36, rectRadius: 0.12, fill: { color: C.background2 }, line: { type: "none" } });
-    text(s, "すでにある“成功体験”", { x: px + 0.3, y: 2.4, w: pw - 0.6, h: 0.35, fontSize: 15, bold: true, color: C.accent1 });
-    text(s, "「資料作成でAIを活用した際、数分で高クオリティな成果物が完成し、大幅な時間削減を実感」", { x: px + 0.3, y: 2.85, w: pw - 0.6, h: 1.3, fontSize: 15, color: C.text1, italic: true });
+    text(s, "すでにある「成功体験」", { x: px + 0.3, y: 2.4, w: pw - 0.6, h: 0.35, fontSize: 15, bold: true, color: C.accent1 });
+    text(s, "「資料作成でAIを活用した際、数分で高クオリティな成果物が完成し、大幅な時間削減を実感」", { x: px + 0.3, y: 2.85, w: pw - 0.6, h: 1.3, fontSize: 15, color: C.text2 });
     text(s, [
       { text: "テスト導入  ", options: { fontSize: 13, color: C.text1 } },
       { text: "8名", options: { fontSize: 24, bold: true, color: C.text1, breakLine: true } },
       { text: "展開予定  ", options: { fontSize: 13, color: C.text1 } },
       { text: "50〜70名", options: { fontSize: 24, bold: true, color: C.accent1 } },
     ], { x: px + 0.3, y: 4.3, w: pw - 0.6, h: 1.2 });
-    text(s, "この体験を、全社の“当たり前”に", { x: px + 0.3, y: 5.75, w: pw - 0.6, h: 0.5, fontSize: 14, bold: true, color: C.text1 });
+    text(s, "この体験を、管理部門・管理職の「当たり前」に", { x: px + 0.3, y: 5.75, w: pw - 0.6, h: 0.5, fontSize: 14, bold: true, color: C.text1 });
   }
 
   // 課題の構造化
@@ -268,17 +269,17 @@ const OUT = process.argv[2] || "proposal.pptx";
     cols.forEach((c) => text(s, c.h, { x: c.x, y: 2.0, w: c.w, h: 0.3, fontSize: 12, bold: true, color: C.accent6 }));
     const rows = [
       { Icon: fa.FaShieldHalved, color: C.accent1, theme: "A. データ管理・\nセキュリティ",
-        issues: ["Driveのリンク共有で、一度リンクを開いた人が閲覧できてしまう", "個人情報を含むデータの移行に不安があり、Dropbox切替が進まない"],
+        issues: ["Drive のリンク共有で、ロックをかけても一度リンクを開いた人が閲覧できてしまう", "個人情報を含むデータの移行に不安があり、Dropbox切替が進まない"],
         cause: "共有範囲・権限の設計と、情報の区分ルールが未整備",
-        dir: "管理者設定と共有ドライブで“仕組みで守る”状態にしてから移行" },
-      { Icon: fa.FaWandMagicSparkles, color: C.accent2, theme: "B. AI活用の\n具体化",
+        dir: "管理者設定と共有ドライブで「仕組みで守る」状態にしてから移行" },
+      { Icon: fa.FaWandMagicSparkles, color: C.accent2, theme: "B. AI 活用の\n具体化",
         issues: ["Workspaceの機能を使いこなせていない可能性", "部門・担当者ごとに業務が異なり、最適な使い方が見えない"],
-        cause: "業務起点の活用シーン（ユースケース）が定義されていない",
-        dir: "業務を棚卸しし、効果の大きい業務から“型”（テンプレート・Gem）化" },
+        cause: "業務起点の活用シーン（ユースケース）が未定義",
+        dir: "業務を棚卸しし、効果の大きい業務から「型」（テンプレート・Gem）にする" },
       { Icon: fa.FaPeopleGroup, color: C.accent3, theme: "C. 定着・\n社内展開",
-        issues: ["使い方を変えることへの現場の抵抗、準備期間の負担", "担当者様が学び、社内で指導できる体制が必要"],
+        issues: ["使い方を変えることへの現場の抵抗、準備期間の負担", "ご担当者様が学び、社内で指導できる体制が必要"],
         cause: "展開の手順・教材・推進役が整っていない",
-        dir: "担当者様を“社内コーチ”に。教材を揃えて段階的に展開" },
+        dir: "ご担当者様を「社内コーチ」に。教材を揃えて段階的に展開" },
     ];
     for (let i = 0; i < rows.length; i++) {
       const r = rows[i];
@@ -286,11 +287,11 @@ const OUT = process.argv[2] || "proposal.pptx";
       card(s, pres, { x: MX, y, w: CW, h, shadowOn: false, line: { color: "E2E1EE", width: 0.75 } });
       await iconCircle(s, pres, { Icon: r.Icon, x: MX + 0.18, y: y + 0.33, d: 0.62, color: r.color });
       text(s, r.theme, { x: MX + 0.95, y: y + 0.25, w: 1.55, h: 0.8, fontSize: 14, bold: true, color: C.text2, valign: "middle" });
-      text(s, bullets(r.issues, { gap: 4 }), { x: cols[1].x, y: y + 0.17, w: cols[1].w, h: h - 0.3, fontSize: 13, color: C.text1, valign: "middle" });
-      text(s, r.cause, { x: cols[2].x, y: y + 0.17, w: cols[2].w, h: h - 0.3, fontSize: 13, color: C.text1, valign: "middle" });
+      text(s, bullets(r.issues, { gap: 4 }), { x: cols[1].x, y: y + 0.17, w: cols[1].w, h: h - 0.3, fontSize: 12, color: C.text1, valign: "middle" });
+      text(s, r.cause, { x: cols[2].x, y: y + 0.17, w: cols[2].w, h: h - 0.3, fontSize: 12, color: C.text1, valign: "middle" });
       arrowR(s, { x: cols[3].x - 0.32, y: y + h / 2 - 0.17, w: 0.24, h: 0.34, color: r.color });
       s.addShape(pres.ShapeType.roundRect, { x: cols[3].x, y: y + 0.12, w: cols[3].w - 0.12, h: h - 0.24, rectRadius: 0.08, fill: tint(r.color, 88), line: { type: "none" } });
-      text(s, r.dir, { x: cols[3].x + 0.15, y: y + 0.17, w: cols[3].w - 0.42, h: h - 0.34, fontSize: 13, bold: true, color: C.text2, valign: "middle" });
+      text(s, r.dir, { x: cols[3].x + 0.12, y: y + 0.17, w: cols[3].w - 0.3, h: h - 0.34, fontSize: 12, bold: true, color: C.text2, valign: "middle" });
     }
   }
 
@@ -302,7 +303,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       lead: "ご相談時の「達成すべきゴール」を、6ヶ月後の具体的な状態に置き換えました",
     });
     const rows = [
-      [fa.FaFolderOpen, "Dropbox と Drive にデータが分散。\nリンク共有の範囲に不安があり、個人情報を移せない", "Dropbox を解約し Drive に一本化。\n共有ドライブと管理者設定で、個人情報を“仕組みで”保護"],
+      [fa.FaFolderOpen, "Dropbox と Drive にデータが分散。\nリンク共有の範囲に不安があり、個人情報を移せない", "Dropbox を解約し Drive に一本化。\n共有ドライブと管理者設定で個人情報を保護"],
       [fa.FaWandMagicSparkles, "8名が個人の工夫で試行中。\n効果的な使い方が属人的", "部門別の活用テンプレート・Gemが揃い、\n資料作成・メール・議事録が日常的にAI化"],
       [fa.FaChartLine, "効果が定量化されておらず、\n展開判断の材料が少ない", "50〜70名に展開し、削減時間・利用率を毎月可視化。\n空いた時間を新規事業・付加価値業務へ"],
     ];
@@ -335,9 +336,9 @@ const OUT = process.argv[2] || "proposal.pptx";
     s.addShape(pres.ShapeType.triangle, { x: MX + 0.6, y: 1.95, w: CW - 1.2, h: 0.9, fill: { color: C.text2 }, line: { type: "none" } });
     text(s, "定型業務を減らし、ケアと新たな事業展開に時間を使える組織へ", { x: MX + 2.8, y: 2.38, w: CW - 5.6, h: 0.4, fontSize: 14, bold: true, color: C.background1, align: "center" });
     const pillars = [
-      { Icon: fa.FaShieldHalved, color: C.accent1, n: "柱①", t: "Drive移行・\nセキュアな共有", b: ["Dropbox→Drive移行計画・実行", "共有ドライブ・権限の設計", "管理者設定と情報区分ルール"] },
-      { Icon: fa.FaWandMagicSparkles, color: C.accent2, n: "柱②", t: "業務別AI活用の\n“型”づくり", b: ["8名の業務棚卸し・優先度付け", "テンプレート・Gemの作成", "提出物管理などの自動化"] },
-      { Icon: fa.FaPeopleGroup, color: C.accent3, n: "柱③", t: "定着・\n社内展開", b: ["担当者様の社内コーチ化", "手順書・動画・FAQの整備", "部門別の段階展開"] },
+      { Icon: fa.FaShieldHalved, color: C.accent1, n: "柱①", t: "Drive 移行・\nセキュアな共有", b: ["Dropbox→Drive 移行計画・実行", "共有ドライブ・権限の設計", "管理者設定と情報区分ルール"] },
+      { Icon: fa.FaWandMagicSparkles, color: C.accent2, n: "柱②", t: "業務別 AI 活用の\n「型」づくり", b: ["8名の業務棚卸し・優先度付け", "テンプレート・Gemの作成", "提出物管理などの自動化"] },
+      { Icon: fa.FaPeopleGroup, color: C.accent3, n: "柱③", t: "定着・\n社内展開", b: ["ご担当者様の社内コーチ化", "手順書・動画・FAQの整備", "部門別の段階展開"] },
     ];
     const pw = 3.55, gap = 0.4, px0 = MX + (CW - (pw * 3 + gap * 2)) / 2;
     for (let i = 0; i < 3; i++) {
@@ -358,7 +359,7 @@ const OUT = process.argv[2] || "proposal.pptx";
   // 柱① 移行ステップ
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱① Drive移行・セキュアな共有",
+      kicker: "02｜ご提案内容　柱① Drive 移行・セキュアな共有",
       title: "Dropbox から Google Drive への移行ステップ",
       lead: "「先にルールと箱をつくり、次にデータを移す」順番で、部署単位で小さく確かめながら移行します",
     });
@@ -367,23 +368,23 @@ const OUT = process.argv[2] || "proposal.pptx";
     steps.forEach((st, i) => {
       const x = MX + i * (sw + 0.15);
       s.addShape(i === 0 ? pres.ShapeType.homePlate : pres.ShapeType.chevron, { x, y: 2.05, w: sw, h: 0.62, fill: { color: i % 2 ? C.accent1 : C.text2 }, line: { type: "none" } });
-      text(s, `STEP ${i + 1}  ${st.t}`, { x: x + (i === 0 ? 0.12 : 0.3), y: 2.05, w: sw - 0.5, h: 0.62, fontSize: 13, bold: true, color: C.background1, valign: "middle" });
+      text(s, [{ text: `STEP ${i + 1}`, options: { fontSize: 10, breakLine: true } }, { text: st.t, options: { fontSize: 13 } }], { x: x + (i === 0 ? 0.2 : 0.45), y: 2.05, w: sw - (i === 0 ? 0.5 : 0.75), h: 0.62, bold: true, color: C.background1, valign: "middle" });
       card(s, pres, { x, y: 2.85, w: sw, h: 3.0, shadowOn: false });
-      text(s, bullets(st.b, { gap: 4 }), { x: x + 0.15, y: 3.0, w: sw - 0.3, h: 2.0, fontSize: 12, color: C.text1 });
+      text(s, bullets(st.b, { gap: 6 }), { x: x + 0.12, y: 3.0, w: sw - 0.2, h: 2.0, fontSize: 11, color: C.text1 });
       text(s, "成果物", { x: x + 0.15, y: 5.05, w: sw - 0.3, h: 0.25, fontSize: 10, bold: true, color: C.accent1 });
       text(s, st.out, { x: x + 0.15, y: 5.3, w: sw - 0.3, h: 0.5, fontSize: 11, color: C.text2, bold: true });
     });
     panel(s, { x: MX, y: 6.0, w: CW, h: 0.62, color: C.accent3, t: 88 });
     await iconCircle(s, pres, { Icon: fa.FaCircleCheck, x: MX + 0.15, y: 6.08, d: 0.46, color: C.accent3 });
-    text(s, D.migration.tool, { x: MX + 0.75, y: 6.0, w: CW - 0.95, h: 0.62, fontSize: 12, color: C.text1, valign: "middle" });
+    text(s, D.migration.tool, { x: MX + 0.75, y: 6.0, w: CW - 0.95, h: 0.62, fontSize: 11, color: C.text1, valign: "middle" });
     notes(s, D.migration.notes);
   }
 
   // 柱① リンク共有の不安
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱① Drive移行・セキュアな共有",
-      title: "「リンクを開いた人が見られる」不安は、設定で解消できます",
+      kicker: "02｜ご提案内容　柱① Drive 移行・セキュアな共有",
+      title: "「リンクを開いた人が見られる」不安は、仕組みで大きく減らせます",
       lead: D.sharing.lead,
     });
     // left: cause
@@ -394,7 +395,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     D.sharing.causes.forEach((c, i) => {
       const y = 3.05 + i * 1.15;
       text(s, c.t, { x: MX + 0.3, y, w: lw - 0.6, h: 0.32, fontSize: 14, bold: true, color: C.accent5 });
-      text(s, c.d, { x: MX + 0.3, y: y + 0.35, w: lw - 0.6, h: 0.75, fontSize: 12, color: C.text1 });
+      text(s, c.d, { x: MX + 0.3, y: y + 0.35, w: lw - 0.5, h: 0.75, fontSize: 11.5, color: C.text1 });
     });
     // right: measures
     const rx = MX + lw + 0.35, rw = CW - lw - 0.35;
@@ -416,7 +417,7 @@ const OUT = process.argv[2] || "proposal.pptx";
   // 柱① 情報区分ルール
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱① Drive移行・セキュアな共有",
+      kicker: "02｜ご提案内容　柱① Drive 移行・セキュアな共有",
       title: "情報区分と取扱いルール（たたき台）",
       lead: "移行前に「どこに置き、誰と共有し、AI に使ってよいか」を情報区分ごとに決めます",
     });
@@ -432,13 +433,13 @@ const OUT = process.argv[2] || "proposal.pptx";
         : { color: HEX.dk1, fill: { color: i % 2 ? "FFFFFF" : "F7F6FC" }, fontSize: 12, valign: "middle" },
     }))));
     s.addTable(tbl, { x: MX, y: 2.1, w: CW, colW, rowH: [0.42, 0.95, 0.85, 0.85, 0.75], border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [4, 8, 4, 8], fontFace: L.THEME.bodyFontFace });
-    text(s, "※ Google は、Workspace の Gemini が事前の許可なく顧客データをモデルの学習に使わないこと、既存のアクセス権限に従うことを明示しています。一方、Gemini Notebook は組織の共有設定や DLP と連携しないため、要配慮個人情報は扱いません。最終的なルールは「医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス」等を踏まえて確定します。", { x: MX, y: 6.05, w: CW, h: 0.6, fontSize: 11, color: C.accent6 });
+    text(s, "※ Google は、Workspace の Gemini が事前の許可なく顧客データをモデルの学習に使わないこと、既存のアクセス権限に従うことを明示しています。一方、Gemini Notebook はデータリージョン設定の対象外で、Business エディションでは DLP による制御もできないため、要配慮個人情報は扱わない方針とします。最終的なルールは「医療・介護関係事業者における個人情報の適切な取扱いのためのガイダンス」等を踏まえて確定します。", { x: MX, y: 6.0, w: CW, h: 0.65, fontSize: 11, color: C.text1 });
   }
 
   // 柱② 業務別活用マップ
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱② 業務別AI活用の“型”づくり",
+      kicker: "02｜ご提案内容　柱② 業務別AI 活用の「型」づくり",
       title: "業務別 Gemini 活用マップ（例）",
       lead: "部門ごとに「誰の・どの業務に・どの機能を」使うかを具体化し、貴社版のマップに仕上げます",
     });
@@ -454,8 +455,8 @@ const OUT = process.argv[2] || "proposal.pptx";
       text(s, d.name, { x: x + 0.85, y: y + 0.2, w: gw - 1.0, h: 0.45, fontSize: 15, bold: true, color: C.text2, valign: "middle" });
       d.items.forEach(([u, tool], k) => {
         const yy = y + 0.85 + k * 0.42;
-        text(s, u, { x: x + 0.3, y: yy, w: gw - 2.15, h: 0.36, fontSize: 13, color: C.text1, valign: "middle" });
-        chip(s, tool, { x: x + gw - 1.8, y: yy + 0.05, w: 1.6, h: 0.26, color: colors[i], fontSize: 9 });
+        text(s, u, { x: x + 0.3, y: yy, w: gw - 2.45, h: 0.36, fontSize: 13, color: C.text1, valign: "middle" });
+        chip(s, tool, { x: x + gw - 2.1, y: yy + 0.05, w: 1.9, h: 0.26, color: colors[i], fontSize: 9 });
       });
     }
   }
@@ -463,9 +464,9 @@ const OUT = process.argv[2] || "proposal.pptx";
   // 柱② 優先度マトリクス
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱② 業務別AI活用の“型”づくり",
+      kicker: "02｜ご提案内容　柱② 業務別AI 活用の「型」づくり",
       title: "効果を実感しやすい業務から着手します",
-      lead: "「効果の大きさ」と「始めやすさ」で業務を整理し、すぐ成果が出る業務から“型”にして現場の抵抗感を下げます",
+      lead: "「効果の大きさ」と「始めやすさ」で業務を整理し、すぐ成果が出る業務から「型」にして現場の抵抗感を下げます",
     });
     const gx = MX + 0.5, gy = 2.15, gw = 6.6, gh = 4.25;
     // quadrants
@@ -484,8 +485,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       const cx = gx + p.x * gw, cy = gy + (1 - p.y) * gh;
       const d = 0.2;
       s.addShape(pres.ShapeType.ellipse, { x: cx - d / 2, y: cy - d / 2, w: d, h: d, fill: { color: C.text2 }, line: { type: "none" } });
-      const left = p.x > 0.72;
-      text(s, p.t, { x: left ? cx - 0.15 - 2.25 : cx + 0.15, y: cy - 0.16, w: 2.25, h: 0.32, fontSize: 12, bold: true, color: C.text2, valign: "middle", align: left ? "right" : "left" });
+      text(s, p.t, { x: cx + 0.15, y: cy - 0.16, w: 1.9, h: 0.32, fontSize: 12, bold: true, color: C.text2, valign: "middle" });
     });
     // right: steps
     const rx = gx + gw + 0.45, rw = W - MX - rx;
@@ -501,8 +501,8 @@ const OUT = process.argv[2] || "proposal.pptx";
   // 柱② 活用シナリオ
   {
     const s = content(sec, {
-      kicker: "02｜ご提案内容　柱② 業務別AI活用の“型”づくり",
-      title: "活用シナリオ例：まず取り組みたい3つの業務",
+      kicker: "02｜ご提案内容　柱② 業務別AI 活用の「型」づくり",
+      title: "活用シナリオ例：まず着手をおすすめする3つの業務",
       lead: "いずれも追加ツールなしで実現でき、効果はテスト導入メンバーで実測して展開判断の材料にします",
     });
     const sc = D.scenarios;
@@ -513,15 +513,15 @@ const OUT = process.argv[2] || "proposal.pptx";
       const x = MX + i * (cw + 0.3), y = 2.1;
       card(s, pres, { x, y, w: cw, h: 4.5 });
       await iconCircle(s, pres, { Icon: icons[i], x: x + 0.22, y: y + 0.2, d: 0.55, color: colors[i] });
-      text(s, sc[i].t, { x: x + 0.9, y: y + 0.18, w: cw - 1.05, h: 0.6, fontSize: 15, bold: true, color: C.text2, valign: "middle" });
-      text(s, "いま", { x: x + 0.25, y: y + 0.95, w: 1, h: 0.25, fontSize: 10, bold: true, color: C.accent6 });
+      text(s, sc[i].t, { x: x + 0.9, y: y + 0.18, w: cw - 1.0, h: 0.6, fontSize: 14, bold: true, color: C.text2, valign: "middle" });
+      text(s, "いま（想定）", { x: x + 0.25, y: y + 0.95, w: 1.5, h: 0.25, fontSize: 10, bold: true, color: C.accent6 });
       s.addShape(pres.ShapeType.roundRect, { x: x + 0.2, y: y + 1.2, w: cw - 0.4, h: 0.95, rectRadius: 0.08, fill: { color: "F1F1F4" }, line: { type: "none" } });
       text(s, sc[i].before, { x: x + 0.32, y: y + 1.25, w: cw - 0.64, h: 0.85, fontSize: 12, color: C.text1, valign: "middle" });
       s.addShape(pres.ShapeType.downArrow, { x: x + cw / 2 - 0.18, y: y + 2.22, w: 0.36, h: 0.3, fill: { color: colors[i] }, line: { type: "none" } });
       text(s, "これから", { x: x + 0.25, y: y + 2.5, w: 1.2, h: 0.25, fontSize: 10, bold: true, color: colors[i] });
       s.addShape(pres.ShapeType.roundRect, { x: x + 0.2, y: y + 2.75, w: cw - 0.4, h: 1.15, rectRadius: 0.08, fill: tint(colors[i], 88), line: { type: "none" } });
       text(s, sc[i].after, { x: x + 0.32, y: y + 2.8, w: cw - 0.64, h: 1.05, fontSize: 12, color: C.text2, bold: true, valign: "middle" });
-      text(s, "使う機能：" + sc[i].tools, { x: x + 0.25, y: y + 4.0, w: cw - 0.5, h: 0.4, fontSize: 11, color: C.accent6 });
+      text(s, "使う機能：" + sc[i].tools, { x: x + 0.25, y: y + 3.97, w: cw - 0.4, h: 0.45, fontSize: 11, color: C.text1 });
     }
     notes(s, D.scenarioNotes);
   }
@@ -530,8 +530,8 @@ const OUT = process.argv[2] || "proposal.pptx";
   {
     const s = content(sec, {
       kicker: "02｜ご提案内容　柱③ 定着・社内展開",
-      title: "担当者様が「社内で教えられる」状態をつくります",
-      lead: "担当者様を“社内コーチ”として育成し、現場が迷わない教材と相談窓口を揃えて準備期間の負担を最小化します",
+      title: "ご担当者様が「社内で教えられる」状態をつくります",
+      lead: "ご担当者様を「社内コーチ」として育成し、現場が迷わない教材と相談窓口を揃えて準備期間の負担を減らします",
     });
     const items = D.enablement;
     const icons = [fa.FaWandMagicSparkles, fa.FaPhotoFilm, fa.FaPersonChalkboard, fa.FaComments];
@@ -540,14 +540,14 @@ const OUT = process.argv[2] || "proposal.pptx";
       const x = MX + (i % 2) * (gw + 0.25), y = 2.1 + Math.floor(i / 2) * (gh + 0.25);
       card(s, pres, { x, y, w: gw, h: gh });
       await iconCircle(s, pres, { Icon: icons[i], x: x + 0.22, y: y + 0.22, d: 0.55, color: C.accent3 });
-      text(s, items[i].t, { x: x + 0.9, y: y + 0.2, w: gw - 1.05, h: 0.6, fontSize: 14, bold: true, color: C.text2, valign: "middle" });
+      text(s, items[i].t, { x: x + 0.9, y: y + 0.2, w: gw - 1.0, h: 0.6, fontSize: 13, bold: true, color: C.text2, valign: "middle" });
       text(s, items[i].d, { x: x + 0.25, y: y + 0.9, w: gw - 0.5, h: 1.05, fontSize: 12, color: C.text1 });
     }
     const px = MX + gw * 2 + 0.55, pw = W - MX - px;
     s.addShape(pres.ShapeType.roundRect, { x: px, y: 2.1, w: pw, h: 4.35, rectRadius: 0.12, fill: { color: C.background2 }, line: { type: "none" } });
     text(s, "現場の負担を抑える3つの工夫", { x: px + 0.3, y: 2.3, w: pw - 0.6, h: 0.4, fontSize: 15, bold: true, color: C.accent1 });
     D.lowBurden.forEach(([t, d], i) => {
-      const y = 2.9 + i * 1.15;
+      const y = 2.9 + i * 1.12;
       badge(s, i + 1, { x: px + 0.3, y, d: 0.42, color: C.accent1, fontSize: 13 });
       text(s, t, { x: px + 0.9, y: y - 0.02, w: pw - 1.15, h: 0.35, fontSize: 14, bold: true, color: C.text1 });
       text(s, d, { x: px + 0.9, y: y + 0.35, w: pw - 1.15, h: 0.7, fontSize: 12, color: C.text1 });
@@ -559,7 +559,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content(sec, {
       kicker: "02｜ご提案内容　柱③ 定着・社内展開",
       title: "段階展開のロードマップ：8名から50〜70名へ",
-      lead: "担当部署 → 本部管理部門 → 営業・現場管理職と、各段階で効果を確認しながら成功事例を積み上げて広げます",
+      lead: "担当部署 → 本部管理部門 → 営業・現場管理職と、各段階で効果を確認し、次に進むかを判断しながら広げます",
     });
     const ph = D.phases;
     const pw = (CW - 0.5) / 3;
@@ -573,7 +573,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       text(s, p.who, { x: x + 0.25, y: by + 0.92, w: pw - 0.5, h: 0.3, fontSize: 13, color: C.background1 });
       card(s, pres, { x, y: 4.2, w: pw, h: 2.35, shadowOn: false });
       text(s, p.goal, { x: x + 0.2, y: 4.32, w: pw - 0.4, h: 0.55, fontSize: 13, bold: true, color: C.text2 });
-      text(s, bullets(p.acts, { gap: 3 }), { x: x + 0.2, y: 4.9, w: pw - 0.4, h: 1.55, fontSize: 12, color: C.text1 });
+      text(s, bullets(p.acts, { gap: 6 }), { x: x + 0.2, y: 4.9, w: pw - 0.4, h: 1.6, fontSize: 13, color: C.text1 });
     });
   }
 
@@ -582,7 +582,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content(sec, {
       kicker: "02｜ご提案内容",
       title: "ご要件と本提案の対応",
-      lead: "いただいた必須要件・推奨要件のすべてに、本提案の具体的な取組みでお応えします",
+      lead: "いただいた必須要件・推奨要件のすべてに、本提案の具体的な取り組みでお応えします",
     });
     const th = (t) => ({ text: t, options: { bold: true, color: HEX.lt1, fill: { color: HEX.dk2 }, fontSize: 12, valign: "middle" } });
     const rows = D.requirements.map((r, i) => [
@@ -591,6 +591,28 @@ const OUT = process.argv[2] || "proposal.pptx";
       { text: r[2], options: { color: HEX.dk2, bold: true, fill: { color: i % 2 ? "FFFFFF" : "F7F6FC" }, fontSize: 12, valign: "middle" } },
     ]);
     s.addTable([[th("区分"), th("ご要件"), th("本提案での対応")]].concat(rows), { x: MX, y: 1.95, w: CW, colW: [0.9, 5.0, CW - 5.9], rowH: [0.38].concat(D.requirements.map(() => 0.52)), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 8, 3, 8], fontFace: L.THEME.bodyFontFace });
+  }
+
+  // 当社のご支援スタンス
+  {
+    const s = content(sec, {
+      kicker: "02｜ご提案内容",
+      title: "グリーエックスのご支援スタンス",
+      lead: "ツールを売るのではなく、貴社が自走できる状態をつくることをゴールにご支援します",
+    });
+    const icons = [fa.FaHandshake, fa.FaUserNurse, fa.FaSeedling, fa.FaChartLine];
+    const gw = (CW - 0.9) / 4;
+    for (let i = 0; i < D.stance.length; i++) {
+      const st = D.stance[i];
+      const x = MX + i * (gw + 0.3);
+      card(s, pres, { x, y: 2.1, w: gw, h: 3.0 });
+      await iconCircle(s, pres, { Icon: icons[i], x: x + 0.25, y: 2.3, d: 0.75, color: C.accent1 });
+      text(s, st[0], { x: x + 0.25, y: 3.15, w: gw - 0.5, h: 0.4, fontSize: 16, bold: true, color: C.text2 });
+      text(s, st[1], { x: x + 0.25, y: 3.6, w: gw - 0.45, h: 1.4, fontSize: 13, color: C.text1 });
+    }
+    s.addShape(pres.ShapeType.roundRect, { x: MX, y: 5.3, w: CW, h: 1.3, rectRadius: 0.1, fill: { color: "FFF4F6" }, line: { color: HEX.accent5, width: 1, dashType: "dash" } });
+    text(s, D.stanceTodo[0], { x: MX + 0.3, y: 5.4, w: CW - 0.6, h: 0.35, fontSize: 14, bold: true, color: C.accent5 });
+    text(s, D.stanceTodo[1], { x: MX + 0.3, y: 5.78, w: CW - 0.6, h: 0.75, fontSize: 13, color: C.text1 });
   }
 
   // ======================================================================
@@ -607,9 +629,9 @@ const OUT = process.argv[2] || "proposal.pptx";
     const th = (t) => ({ text: t, options: { bold: true, color: HEX.lt1, fill: { color: HEX.dk2 }, fontSize: 12, valign: "middle" } });
     const tbl = [hdr.map(th)].concat(D.caseSummary.rows.map((r, i) => r.map((c, j) => ({
       text: c,
-      options: { color: j === 2 ? HEX.dk2 : HEX.dk1, bold: j !== 1, fill: { color: i % 2 ? "FFFFFF" : "F7F6FC" }, fontSize: 12, valign: "middle" },
+      options: { color: j === 2 ? HEX.dk2 : HEX.dk1, bold: j !== 1, fill: { color: i % 2 ? "FFFFFF" : "F7F6FC" }, fontSize: 11, valign: "middle" },
     }))));
-    s.addTable(tbl, { x: MX, y: 2.05, w: CW, colW: [3.1, 5.2, CW - 8.3], rowH: [0.4].concat(D.caseSummary.rows.map(() => 0.58)), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 8, 3, 8], fontFace: L.THEME.bodyFontFace });
+    s.addTable(tbl, { x: MX, y: 2.05, w: CW, colW: [3.1, 5.2, CW - 8.3], rowH: [0.36].concat(D.caseSummary.rows.map(() => 0.5)), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 8, 3, 8], fontFace: L.THEME.bodyFontFace });
     source(s, pres, D.caseSummary.source);
     notes(s, D.caseSummary.notes);
   }
@@ -643,8 +665,8 @@ const OUT = process.argv[2] || "proposal.pptx";
   {
     const s = content(sec, {
       kicker: "04｜進め方・体制・費用",
-      title: "スケジュール（案）：6ヶ月で移行完了と全社展開",
-      lead: "Dropbox 切替を最優先に、移行と並行して活用の“型”づくりを進め、6ヶ月で移行完了と全社展開をめざします",
+      title: "スケジュール（案）：6ヶ月で移行完了と対象部門への展開",
+      lead: "Dropbox 切替を最優先に、移行と並行して活用の「型」づくりを進め、6ヶ月で対象部門への展開まで進めます",
     });
     const months = D.schedule.months;
     const lx = MX, lw = 3.3, gx = lx + lw, gw = CW - lw, mw = gw / months.length;
@@ -667,6 +689,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     });
     const my = 2.1;
     text(s, "凡例", { x: lx + 0.1, y: my, w: 0.6, h: 0.28, fontSize: 11, bold: true, color: C.accent6, valign: "middle" });
+    source(s, pres, "※ 開始時期はご決裁後に確定します。Dropbox の解約時期は契約更新時期に合わせて調整します。生産性向上の委員会の経過措置（2027年3月末まで）も考慮します");
     [["柱①", C.accent1], ["柱②", C.accent2], ["柱③", C.accent3], ["共通", C.accent4]].forEach(([t, c], i) => {
       s.addShape(pres.ShapeType.roundRect, { x: lx + 0.7 + i * 0.65, y: my + 0.06, w: 0.18, h: 0.18, rectRadius: 0.03, fill: { color: c }, line: { type: "none" } });
       text(s, t, { x: lx + 0.92 + i * 0.65, y: my, w: 0.45, h: 0.28, fontSize: 10, color: C.text1, valign: "middle" });
@@ -691,7 +714,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       text(s, p.key, { x: x + 0.3, y: y + 0.2, w: 1.5, h: 0.3, fontSize: 12, bold: true, color: C.accent1 });
       text(s, p.name, { x: x + 0.3, y: y + 0.5, w: cw - 0.6, h: 0.42, fontSize: 19, bold: true, color: fg });
       text(s, p.concept, { x: x + 0.3, y: y + 0.95, w: cw - 0.6, h: 0.55, fontSize: 12, color: fg });
-      text(s, bullets(p.items, { gap: 6 }), { x: x + 0.3, y: y + 1.55, w: cw - 0.6, h: 1.8, fontSize: 13, color: fg });
+      text(s, bullets(p.items, { gap: 5 }), { x: x + 0.3, y: y + 1.55, w: cw - 0.5, h: 1.8, fontSize: 12, color: fg });
       s.addShape(pres.ShapeType.line, { x: x + 0.3, y: y + 3.4, w: cw - 0.6, h: 0, line: { color: rec ? "C9C4EE" : "E2E1EE", width: 0.75 } });
       text(s, p.term, { x: x + 0.3, y: y + 3.5, w: cw - 0.6, h: 0.28, fontSize: 11, color: C.accent6 });
       text(s, [{ text: p.price, options: { fontSize: 22, bold: true, color: C.accent1 } }, { text: p.priceNote, options: { fontSize: 11, color: C.accent6 } }], { x: x + 0.3, y: y + 3.8, w: cw - 0.6, h: 0.5, valign: "middle" });
@@ -717,7 +740,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
       showLegend: false, barGapWidthPct: 70, valAxisMaxVal: D.roi.max,
     });
-    text(s, D.roi.assumption, { x: MX + 0.3, y: 5.3, w: lw - 0.6, h: 1.2, fontSize: 11, color: C.accent6 });
+    text(s, D.roi.assumption, { x: MX + 0.3, y: 5.3, w: lw - 0.45, h: 1.2, fontSize: 10.5, color: C.text1, paraSpaceAfter: 3 });
     // KPI
     const rx = MX + lw + 0.35, rw = CW - lw - 0.35;
     text(s, "毎月追う指標（KPI案）", { x: rx, y: 2.1, w: rw, h: 0.35, fontSize: 15, bold: true, color: C.text2 });
@@ -737,7 +760,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     const s = content(sec, {
       kicker: "04｜進め方・体制・費用",
       title: "推進体制（案）",
-      lead: "ご担当者様をプロジェクトの中心に据え、当社は“伴走者”として知見と手を提供します",
+      lead: "ご担当者様をプロジェクトの中心に据え、当社は「伴走者」として知見と手を提供します",
     });
     const lw = (CW - 1.3) / 2;
     const rx = MX + lw + 1.3;
@@ -754,7 +777,7 @@ const OUT = process.argv[2] || "proposal.pptx";
     }
     // arrows between
     s.addShape(pres.ShapeType.leftRightArrow, { x: MX + lw + 0.2, y: 3.65, w: 0.9, h: 0.55, fill: { color: C.accent4 }, line: { type: "none" } });
-    text(s, "定例・チャット\nで常時連携", { x: MX + lw + 0.05, y: 4.25, w: 1.2, h: 0.6, fontSize: 10, color: C.accent6, align: "center" });
+    text(s, "定例・チャットで\n常時連携", { x: MX + lw + 0.0, y: 4.25, w: 1.3, h: 0.6, fontSize: 11, color: C.text2, align: "center" });
     // decision flow
     s.addShape(pres.ShapeType.roundRect, { x: MX, y: 6.1, w: CW, h: 0.52, rectRadius: 0.08, fill: { color: C.background2 }, line: { type: "none" } });
     text(s, "決裁フロー", { x: MX + 0.25, y: 6.1, w: 1.3, h: 0.52, fontSize: 13, bold: true, color: C.accent1, valign: "middle" });
@@ -768,7 +791,7 @@ const OUT = process.argv[2] || "proposal.pptx";
       card(s, pres, { x: rx + 0.3, y, w: lw - 0.6, h: 0.98, shadowOn: false });
       await iconCircle(s, pres, { Icon: [fa.FaHeadset, fa.FaShieldHalved, fa.FaWandMagicSparkles][i], x: rx + 0.45, y: y + 0.21, d: 0.55, color: C.accent3 });
       text(s, vd[i][0], { x: rx + 1.15, y: y + 0.1, w: lw - 1.6, h: 0.35, fontSize: 14, bold: true, color: C.text2 });
-      text(s, vd[i][1], { x: rx + 1.15, y: y + 0.45, w: lw - 1.6, h: 0.55, fontSize: 12, color: C.text1 });
+      text(s, vd[i][1], { x: rx + 1.15, y: y + 0.45, w: lw - 1.45, h: 0.55, fontSize: 12, color: C.text1 });
     }
   }
 
@@ -813,17 +836,17 @@ const OUT = process.argv[2] || "proposal.pptx";
     source(s, pres, D.editions.source);
   }
   {
-    const s = content("Appendix", { kicker: "Appendix", title: "会社概要", lead: "本提案は、貴社に導入済みの Google Workspace の範囲でのご支援を前提としています" });
+    const s = content("Appendix", { kicker: "Appendix", title: "会社概要", lead: "本件では自社ツールの導入を前提とせず、導入済みの Google Workspace の活用支援に専念します" });
     const th = { bold: true, color: HEX.dk2, fill: { color: "F3F2FA" }, fontSize: 13, valign: "middle" };
     const td = { color: HEX.dk1, fill: { color: "FFFFFF" }, fontSize: 13, valign: "middle" };
-    s.addTable(D.profile.map(([k, v]) => [{ text: k, options: th }, { text: v, options: td }]), { x: MX, y: 2.1, w: 8.4, colW: [1.8, 6.6], rowH: 0.56, border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 10, 3, 10], fontFace: L.THEME.bodyFontFace });
-    s.addImage({ data: await illus("office-building"), x: 9.75, y: 2.4, w: 2.6, h: 2.6, altText: "オフィスビルのイラスト" });
+    s.addTable(D.profile.map(([k, v]) => [{ text: k, options: th }, { text: v, options: td }]), { x: MX, y: 2.1, w: 8.4, colW: [1.8, 6.6], rowH: 0.64, border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [3, 10, 3, 10], fontFace: L.THEME.bodyFontFace });
+    s.addImage({ data: await illus("office-building"), x: 9.75, y: 3.0, w: 2.6, h: 2.6, altText: "オフィスビルのイラスト" });
   }
   const PER = 16;
   for (let p = 0; p * PER < D.sources.length; p++) {
     const s = content("Appendix", { kicker: "Appendix", title: p ? "出典一覧（続き）" : "出典一覧", lead: "本資料で引用した数値・事例・制度情報の出典です（2026年10月26日時点で確認）" });
     const items = D.sources.slice(p * PER, (p + 1) * PER);
-    text(s, items.map((t, i) => ({ text: t, options: { breakLine: i < items.length - 1, paraSpaceAfter: 5, bold: t.startsWith("【"), color: t.startsWith("【") ? HEX.dk2 : HEX.dk1 } })), { x: MX, y: 2.0, w: CW, h: 4.6, fontSize: 10 });
+    text(s, items.map((t, i) => ({ text: t, options: { breakLine: i < items.length - 1, paraSpaceAfter: 6, bold: t.startsWith("【"), color: t.startsWith("【") ? HEX.dk2 : HEX.dk1 } })), { x: MX, y: 2.0, w: CW, h: 4.6, fontSize: 11 });
   }
 
   // 裏表紙
@@ -833,21 +856,6 @@ const OUT = process.argv[2] || "proposal.pptx";
     s.addImage({ data: await illus("handshake"), x: 9.0, y: 2.1, w: 3.0, h: 3.0, altText: "握手のイラスト" });
     s.addText("ご清聴ありがとうございました", { placeholder: "title" });
     s.addText("グリーエックス株式会社　山口 宙輝", { placeholder: "meta" });
-  }
-
-  // 社内用（提出前に削除）
-  {
-    pres.addSection({ title: "社内用（提出前に削除）" });
-    const s = content("社内用（提出前に削除）", { kicker: "社内用", title: "【社内用・提出前に削除】案件管理情報", lead: "本ページは社内確認用です。お客様への提出・投影前に必ず削除してください" });
-    const th = { bold: true, color: HEX.lt1, fill: { color: HEX.accent5 }, fontSize: 11, valign: "middle" };
-    const td = { color: HEX.dk1, fill: { color: "FFFFFF" }, fontSize: 11, valign: "middle" };
-    s.addTable(D.internal.map(([k, v]) => [{ text: k, options: th }, { text: v, options: td }]), { x: MX, y: 2.0, w: CW, colW: [2.3, CW - 2.3], rowH: D.internal.map(() => 0.45), border: { type: "solid", pt: 0.75, color: "DAD8E8" }, margin: [2, 8, 2, 8], fontFace: L.THEME.bodyFontFace });
-    notes(s, "想定問答メモの出典: https://gree-x.com/news/20261023.html 。助成金: https://www.mhlw.go.jp/content/11800000/001731978.pdf 、https://it-shien.smrj.go.jp/pdf/it2026_kaitei_koubo_tsujyo.pdf");
-  }
-  {
-    const s = content("社内用（提出前に削除）", { kicker: "社内用", title: "【社内用・提出前に削除】挙手時のアピール文（原文）", lead: "案件への挙手時に送付したアピール文です。本日の説明内容との整合確認用にご活用ください" });
-    card(s, pres, { x: MX, y: 2.0, w: CW, h: 4.6, shadowOn: false, line: { color: HEX.accent5, width: 1 } });
-    text(s, D.appeal.map((t, i) => ({ text: t, options: { breakLine: i < D.appeal.length - 1, paraSpaceAfter: 8 } })), { x: MX + 0.35, y: 2.2, w: CW - 0.7, h: 4.2, fontSize: 14, color: C.text1 });
   }
 
   await pres.writeFile({ fileName: OUT });
